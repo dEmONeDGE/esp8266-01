@@ -1,6 +1,7 @@
 #include "RestClient.h"
 
 RestClient client = RestClient("www.dweet.io");
+String nombreCosa = "iotUMSS";
 int val1, val2;
 
 char ssid[] = "tu red wifi";
@@ -20,7 +21,7 @@ void loop(){
 	val1 = random(1, 100);
 	val2 = random(1, 100);
 	response = "";
-	pet = "/dweet/for/iotUMSS?val1="+String(val1)+"&val2="+String(val2);
+	pet = "/dweet/for/"+nombreCosa+"?val1="+String(val1)+"&val2="+String(val2);
 	pet.toCharArray(request, 50);
 	
 	int statusCode = client.get(request, &response);
